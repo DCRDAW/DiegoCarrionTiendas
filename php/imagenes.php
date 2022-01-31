@@ -21,6 +21,6 @@
             mostrarIMG();
         ?>
         <h2><a href="../index.php">Subir imagenes</a></h2>
-        <h2><a href="nombres.php">Ver nombres imagen</a></h2>
+        
     </body>
 </html>

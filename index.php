@@ -58,11 +58,10 @@
     <body>
         <h2>Subir imagenes</h2>
         <form method="post" enctype="multipart/form-data" action="">
-            <label for="imagen">Introduce una imagen</label><br />
+            <label for="imagen">Introduce las imagenes a guardar en el álbum</label><br />
             <input type="file" name="imagen[]" multiple="multiple"><br />
             <input type="submit" name="enviar">
         </form>
-        <h2><a href="php/nombres.php">Ver nombres imagen</a></h2>
         <h2><a href="php/imagenes.php">Ver imagenes </a></h2>
     </body>
 </html>
