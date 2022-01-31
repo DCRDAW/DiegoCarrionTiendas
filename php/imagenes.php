@@ -20,7 +20,7 @@
         <?php
             mostrarIMG();
         ?>
-        <h2><a href="../index.php">Subir imagenes</a></h2>
+        <h2><a href="pedido.php">Subir imagenes</a></h2>
         
     </body>
 </html>
