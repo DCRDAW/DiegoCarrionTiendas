@@ -1,10 +1,7 @@
 <?php
-    function mostrarIMG(){
-        $array=array_diff(scandir("../archivos/"), array('..', '.'));  
-        foreach ($array as $indice => $nombre) {
-            echo '<div class="image"><img src="../archivos/'.$nombre.'"></div><br />';
-        }
-    }  
+    require_once "controlador.php";
+    $control=new Controlador();
+    $pedidos= $control->sacarPedidos(); 
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +15,17 @@
     <body>
         <h2><a href="imagenes.php">Ver imagenes </a></h2>
         <?php
-            mostrarIMG();
+            $array=array_values( array_diff(scandir("../archivos/"), array('..', '.')));
+            foreach ($array as $indice => $nombre) {
+                $imagenes=array_diff(scandir("../archivos/".$nombre."/"), array('..', '.'));
+                echo '<h1>id del pedido='.$pedidos[$indice]["idPedido"].'</h1>';
+                echo '<h1>Nombre del cliente='.$pedidos[$indice]["nombre"].'</h1>';
+                echo '<h1>Fecha del pedido='.$pedidos[$indice]["Fecha"].'</h1>';
+                foreach ($imagenes as $key => $imagen) {
+                    echo '<div class="image"><img src="../archivos/'.$nombre.'/'.$imagen.'"></div><br />';
+                }
+                
+            }
         ?>
         <h2><a href="pedido.php">Subir imagenes</a></h2>
         

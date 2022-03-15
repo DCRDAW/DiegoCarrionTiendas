@@ -1,7 +1,8 @@
 <?php
-    require_once "funcionesIndex.php";
+    require_once "controlador.php";
+    $control=new Controlador();
     if(isset($_POST["enviar2"])){
-        guardarFichero();
+        $control->pedido();
     }
     
 ?>

@@ -1,10 +1,3 @@
-<?php
-    require_once "php/funcionesIndex.php";
-    if(isset($_POST["enviar"])){
-        guardarFichero();
-    }
-    
-?>
 
 <!DOCTYPE html>
 <html lang="es">

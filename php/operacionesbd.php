@@ -1,9 +1,7 @@
 <?php
-    require 'configdb.php';
     class OperacionesBD{
-        private $conexion;
-        public $resultado;
         public function __construct(){
+            require 'configdb.php';
             $this->conexion=new mysqli(HOSTNAME, USERNAME, PW, DB);
         }
         public function consulta($consulta){
@@ -16,19 +14,14 @@
                 return '<p>Uno de los campos introducidos supera el límite de caracteres</p>';
             return $this->conexion->errno.'--'.$this->conexion->error;
         }
-       /* public function posicionArray($num){
-            return $this->resultado->data_seek($num);
-        }*/
         function sacarFila(){
             return $this->resultado->fetch_array();
         }
         function filaAsociativa(){
             return $this->resultado->fetch_assoc();
         }
-        /*function id_anterior(){
+        public function ultimoInsert_id(){
             return $this->conexion->insert_id;
-        }*/
-        function preparar($consulta){
-            return $this->conexion->prepare($consulta);
         }
+    
     }
